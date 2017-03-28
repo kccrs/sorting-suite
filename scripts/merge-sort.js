@@ -6,7 +6,7 @@ let MergeSort = (arr) => {
   var singleItemArrays = [];
   while (arr.length > 0) {
     singleItemArrays.push(arr.splice(0, 1));
-    console.log('single arrays ', singleItemArrays, 'old array: ', arr);
+    // console.log('single arrays ', singleItemArrays, 'old array: ', arr);
   }
 
   // take first two items sort into new array
