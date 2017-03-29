@@ -1,22 +1,35 @@
-let MergeSort = (arr) => {
+const MergeSort = (arr) => {
   // let testArray = [8, 47, 11, 6, 16, 30];
-  // let testArray = [8, 47, 11, 6, 16, 2, 30];
+  // let testArray = [3, 99, 11, 6, 19, 2, 34];
+
   if (arr.length <= 1) {
     return arr;
   }
 
-  // First divide the list into halves, then compare each element with the adjacent list to sort and merge the two adjacent lists. Finally all the elements are sorted and merged.
+  let middle = Math.floor(arr.length / 2);
 
-  // take first two items sort into new array
+  let leftSide = arr.slice(0, middle);
+  let mergeLeft = MergeSort(leftSide);
 
-  // repeat that for all additional items so there are x number of arrays of 2
+  
+  let rightSide = arr.slice(middle);
+  let mergeRight = MergeSort(rightSide);
+  return mergeIt(mergeLeft, mergeRight);
+};
 
-  // if there is one single left add it to the last array so that one has therefore
+const mergeIt = (left, right) => {
+  let sortedArray = [];
 
-  // then compare the first two arrays and sort the zero index of each into a combined array until each original array's length is zero
+  while (left.length && right.length) {
+    if (left[0] <= right[0]) {
+      sortedArray.push(left.shift());
+    } else {
+      sortedArray.push(right.shift());
+    }
+  }
 
-  // do the same for the next two and so on.
-  return arr;
+  return sortedArray.concat(left.length ? left : right);
+
 };
 
 module.exports = MergeSort;
