@@ -13,4 +13,9 @@ describe('bubble-sort', () => {
     assert.deepEqual(BubbleSort(testArray), [ 'cat', 'dog', 'pizza', 'potato', 'xylophone' ]);
   });
 
+  it('should sort an array of negative numbers using the bubble-sort method', () => {
+    let testArray = [ 6, -15, -3, -9, -1, -11, 0 ];
+    assert.deepEqual(BubbleSort(testArray), [-15, -11, -9, -3, -1, 0, 6]);
+  });
+
 });
