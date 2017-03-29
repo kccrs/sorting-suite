@@ -19,14 +19,6 @@ function InsertionSort(arr) {
     arr[j+1] = current;
   }
   return arr;
-
 }
 
 module.exports = InsertionSort;
-
-// var length = arr.length;
-// for (var i = 0; i < length; i++) {
-//   var temp = arr.shift();
-//   console.log(temp, arr);
-// }
-// return arr;
