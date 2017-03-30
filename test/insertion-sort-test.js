@@ -1,5 +1,5 @@
-var assert = require('chai').assert;
-var InsertionSort = require('../scripts/insertion-sort');
+const assert = require('chai').assert;
+const InsertionSort = require('../scripts/insertion-sort');
 
 describe('insertion sort', () => {
 
